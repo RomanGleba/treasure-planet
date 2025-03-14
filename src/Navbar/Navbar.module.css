@@ -1,0 +1,51 @@
+.header {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Стилі для активного посилання */
+.active {
+    background-color: #ffeb3b;
+    color: #ff1493;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/* Стилі для ховера на навігаційних елементах */
+.nav-link:hover {
+    background-color: #ff80ab;
+    color: white;
+    transform: scale(1.05);
+}

@@ -1,0 +1,91 @@
+/* Загальні стилі */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ff9ff3, #feca57);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Хедер */
+header {
+    background: linear-gradient(90deg, #ff6b81, #ff4757);
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Меню */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Головна секція */
+.hero {
+    padding: 50px 20px;
+    background: #ffcccb;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    color: #d63031;
+    font-size: 2em;
+}
+
+/* Про нас */
+.about {
+    padding: 40px;
+    background: #ff9ff3;
+    color: white;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.about.visible {
+    opacity: 1;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about li {
+    margin: 10px 0;
+}
+
+/* Футер */
+footer {
+    background: linear-gradient(90deg, #ff6b81, #ff4757);
+    padding: 15px;
+    color: white;
+    font-size: 1em;
+    margin-top: 20px;
+}
