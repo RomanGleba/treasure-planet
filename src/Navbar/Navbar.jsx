@@ -1,31 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './Navbar.module.css';
+import React, { useState } from 'react';
+import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({ setCurrentPage }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const menuItems = [
+        { label: 'Головна', index: 0 },
+        { label: 'Про гру', index: 1 },
+        { label: 'Галерея', index: 2 },
+        { label: 'Автори', index: 3 },
+    ];
+
+    const handleClick = (index) => {
+        setCurrentPage(index);
+        setActiveIndex(index);
+    };
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
                 <nav className={styles.frame3}>
-                    <NavLink
-                        to="/home"
-                        end
-                        className={({ isActive }) => (isActive ? styles.active : '')}
-                    >
-                        Головна
-                    </NavLink>
-                    <NavLink
-                        to="/about"
-                        className={({ isActive }) => (isActive ? styles.active : '')}
-                    >
-                        Про гру
-                    </NavLink>
-                    <NavLink
-                        to="/gallery"
-                        className={({ isActive }) => (isActive ? styles.active : '')}
-                    >
-                        Галерея
-                    </NavLink>
+                    {menuItems.map((item) => (
+                        <button
+                            key={item.index}
+                            onClick={() => handleClick(item.index)}
+                            className={activeIndex === item.index ? styles.active : ''}
+                        >
+                            {item.label}
+                        </button>
+                    ))}
                 </nav>
             </div>
         </header>

@@ -1,13 +1,11 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
 import './App.module.css';
-import { router } from './router';
+import Main from "./pages/Main";
 
 
 const App = (props) => {
     return (
-
-        <RouterProvider router={router} />
+        <Main {...props}/>
     );
 };
 

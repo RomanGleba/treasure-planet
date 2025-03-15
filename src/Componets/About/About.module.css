@@ -1,0 +1,22 @@
+
+    .frame {
+        /* Стилі для зображення */
+        width: 617px;           /* Ширина 617px */
+        height: 190px;          /* Висота 190px */
+        object-fit: contain;
+        transform: translateX(-340px);
+
+        /* Стилі для контейнера */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0px;
+        gap: 30px;
+        position: absolute;
+        width: 1160px;
+        height: 570px;
+        left: calc(50% - 1160px / 2);
+        top: 1244px;
+    }
+
+

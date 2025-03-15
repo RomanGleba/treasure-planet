@@ -1,0 +1,9 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Прибирає зайві скролл-бари */
+  background-image: url('../../public/logo.png'); /* Шлях до зображення */
+  background-size: cover; /* Щоб картинка займала весь екран */
+  background-position: center; /* Центрує фон */
+  background-repeat: no-repeat; /* Щоб не повторювалося */
+}
