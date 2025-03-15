@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Home.module.css';
+import styles from './About.module.css';
 
-const Home = () => {
+const About = () => {
 
 
 
@@ -31,4 +31,4 @@ const Home = () => {
 };
 
 
-export default Home;
+export default About;

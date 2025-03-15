@@ -5,20 +5,26 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
     return (
         <header className={styles.header}>
-            <div className="container">
-                <h1>Candy Crush</h1>
-                <nav>
-                    <NavLink to="/home" end className={({ isActive }) => (isActive ? styles.active : '')}>
+            <div className={styles.container}>
+                <nav className={styles.frame3}>
+                    <NavLink
+                        to="/home"
+                        end
+                        className={({ isActive }) => (isActive ? styles.active : '')}
+                    >
                         Головна
                     </NavLink>
-                    <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : '')}>
-                        Про нас
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) => (isActive ? styles.active : '')}
+                    >
+                        Про гру
                     </NavLink>
-                    <NavLink to="/contacts" className={({ isActive }) => (isActive ? styles.active : '')}>
-                        Контакти
-                    </NavLink>
-                    <NavLink to="/shop" className={({ isActive }) => (isActive ? styles.active : '')}>
-                        Магазин
+                    <NavLink
+                        to="/gallery"
+                        className={({ isActive }) => (isActive ? styles.active : '')}
+                    >
+                        Галерея
                     </NavLink>
                 </nav>
             </div>
