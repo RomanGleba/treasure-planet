@@ -1,0 +1,71 @@
+.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрує по горизонталі */
+        justify-content: center; /* Центрує по вертикалі */
+        gap: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw; /* 100% ширини екрану */
+        height: 100vh; /* 100% висоти екрану */
+        background-image: url('/');
+
+        background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
+        background-position: center; /* Центруємо фонове зображення */
+        background-attachment: fixed; /* Фіксуємо фонове зображення */
+        color: #4b4b4b; /* Колір тексту */
+        font-size: 16px; /* Розмір шрифту */
+        line-height: 1.6; /* Висота рядка */
+}
+
+
+
+
+
+.textStyle {
+        font-family: 'Arial', sans-serif; /* Шрифт Arial */
+        font-size: 36px; /* Розмір шрифту */
+        font-weight: bold; /* Товщина шрифту */
+        text-transform: uppercase; /* Усі літери великі */
+        color: white; /* Колір тексту */
+        text-align: center; /* Вирівнювання тексту */
+        letter-spacing: 2px;
+        transform: translateY(-150px);
+}
+
+
+.imgmoveleft {
+        transform: translateX(-465px) translateY(-175px);/* Це перемістить зображення вліво на 465px */
+
+
+}
+
+.imageup {
+        top: calc(50% + 15px);
+        position: absolute;
+        transform: translateY(-175px);
+}
+
+
+.imageupdouble {
+        top: calc(50% + 15px);
+        position: absolute;
+        transform: translateX(430px) translateY(-175px);
+}
+
+
+
+.imagetreble {
+        position: absolute;
+        top: calc(50% + 90px); /* Опускаємо вниз */
+        transform: translateX(-220px); /* Зміщуємо ближче до центру */
+}
+
+
+
+.imagecustom {
+        position: absolute;
+        top: calc(50% + 90px); /* Опускаємо вниз */
+        transform: translateX(220px); /* Зміщуємо ближче до центру */
+}

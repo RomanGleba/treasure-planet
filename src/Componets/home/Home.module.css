@@ -1,0 +1,8 @@
+.foto {
+    display: block;
+    margin: 250px auto 0;    /* Відступ 30px з верхньої частини */
+    width: 617px;           /* Ширина 617px */
+    height: 190px;          /* Висота 190px */
+    object-fit: contain;
+    transform: translateX(-340px);
+}
