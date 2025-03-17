@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "../navbar/Navbar";
 import styles from './Main.module.scss';
 import About from "../Componets/About/About";
@@ -9,7 +9,15 @@ import Characters from "../Componets/сharacters/Characters";
 import Merch from "../Componets/merch/Merch";
 
 const Main = () => {
-    const [currentPage, setCurrentPage] = useState(0);
+    // Отримуємо збережену вкладку з localStorage або ставимо значення за замовчуванням (0)
+    const [currentPage, setCurrentPage] = useState(() => {
+        return parseInt(localStorage.getItem("currentPage")) || 0;
+    });
+
+    // Зберігаємо поточну вкладку у localStorage при зміні стану
+    useEffect(() => {
+        localStorage.setItem("currentPage", currentPage);
+    }, [currentPage]);
 
     return (
         <div className={styles.main}>
