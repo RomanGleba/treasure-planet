@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../navbar/Navbar";
 import styles from './Main.module.scss';
 import About from "../Componets/About/About";
-import Gallery from "../Componets/Gallery/Gallery";
-import Avtors from "../Componets/Avtors/Avtors";
-import Home from "../Componets/Home/Home";
+import Gallery from "../Componets/gallery/Gallery";
+import Avtors from "../Componets/avtors/Avtors";
+import Home from "../Componets/home/Home";
+import Characters from "../Componets/сharacters/Characters";
+import Merch from "../Componets/merch/Merch";
 
 const Main = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -15,7 +17,9 @@ const Main = () => {
             {currentPage === 0 && <Home />}
             {currentPage === 1 && <About />}
             {currentPage === 2 && <Gallery />}
-            {currentPage === 3 && <Avtors />}
+            {currentPage === 3 && <Characters />}
+            {currentPage === 4 && <Avtors />}
+            {currentPage === 5 && <Merch />}
         </div>
     );
 };

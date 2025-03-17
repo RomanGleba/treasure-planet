@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує по горизонталі */
+    justify-content: center; /* Центрує по вертикалі */
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% ширини екрану */
+    height: 100vh; /* 100% висоти екрану */
+    background-image: url('/public/images/backfon.png');
+
+    background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
+    background-position: center; /* Центруємо фонове зображення */
+    background-attachment: fixed; /* Фіксуємо фонове зображення */
+    color: #4b4b4b; /* Колір тексту */
+    font-size: 16px; /* Розмір шрифту */
+    line-height: 1.6; /* Висота рядка */
+}
+
+
+.title {
+    color: white;
+}
+/* Основний контейнер */
+.merchBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Контейнер зображення */
+.imageContainer {
+    flex: 1;
+}
+
+.merchImage {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Стилізація текстового блоку */
+.textContainer {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+
+    padding: 20px;
+    border-radius: 10px;
+
+
+}
+
+/* Текстовий стиль */
+.textContainer p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Стиль кнопки */
+.buyButton {
+    display: inline-block;
+    background: linear-gradient(90deg, #688aff, #4b68ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: not-allowed;
+    box-shadow: 0 0 15px rgba(72, 128, 255, 0.8);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* Маленький підпис під кнопкою */
+.footerText {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.buyButton:hover {
+    background: linear-gradient(90deg, #4b68ff, #688aff);
+
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(72, 128, 255, 1);
+}
+
+/* Ефект при натисканні */
+.buyButton:active {
+    transform: scale(0.95);
+    background: linear-gradient(90deg, #3b58ff, #5778ff);
+}

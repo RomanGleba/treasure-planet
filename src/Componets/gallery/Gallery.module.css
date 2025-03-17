@@ -1,12 +1,22 @@
 .container {
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    margin: 20px auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: pop 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує по горизонталі */
+    justify-content: center; /* Центрує по вертикалі */
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% ширини екрану */
+    height: 100vh; /* 100% висоти екрану */
+    background-image: url('/public/images/backfon.png');
+
+    background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
+    background-position: center; /* Центруємо фонове зображення */
+    background-attachment: fixed; /* Фіксуємо фонове зображення */
+    color: #4b4b4b; /* Колір тексту */
+    font-size: 16px; /* Розмір шрифту */
+    line-height: 1.6; /* Висота рядка */
 }
 
 
@@ -49,3 +59,19 @@
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.textitem {
+
+
+    font-family: 'Arial', sans-serif; /* Шрифт Arial */
+    font-size: 36px; /* Розмір шрифту */
+    font-weight: bold; /* Товщина шрифту */
+    text-transform: uppercase; /* Усі літери великі */
+    color: white; /* Колір тексту */
+    text-align: center; /* Вирівнювання тексту */
+    letter-spacing: 2px;
+    transform: translateY(-60px);
+
+}
+
+

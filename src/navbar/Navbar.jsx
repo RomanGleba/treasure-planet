@@ -8,7 +8,9 @@ const Navbar = ({ setCurrentPage }) => {
         { label: 'Головна', index: 0 },
         { label: 'Про гру', index: 1 },
         { label: 'Галерея', index: 2 },
-        { label: 'Автори', index: 3 },
+        { label: 'Персонажі', index: 3 },
+        { label: 'Автори',  index: 4 },
+        { label: 'Мерч',  index: 5 },
     ];
 
     const handleClick = (index) => {

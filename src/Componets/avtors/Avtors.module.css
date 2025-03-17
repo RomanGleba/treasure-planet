@@ -9,7 +9,7 @@
         left: 0;
         width: 100vw; /* 100% ширини екрану */
         height: 100vh; /* 100% висоти екрану */
-        background-image: url('/');
+        background-image: url('/public/images/backfon.png');
 
         background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
         background-position: center; /* Центруємо фонове зображення */

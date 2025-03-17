@@ -4,7 +4,7 @@ import styles from './Home.module.css'
 const Home = () => {
     return (
         <div>
-            <img src="/text.png" className={styles.foto} alt="опис зображення"/>
+            <img src="/images/text.png" className={styles.foto} alt="опис зображення"/>
         </div>
     );
 };
