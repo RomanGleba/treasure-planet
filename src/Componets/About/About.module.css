@@ -2,53 +2,120 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Початок контенту зверху */
-    gap: 15px; /* Менший відступ між контейнерами */
-    width: 100vw;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
     min-height: 100vh;
     background-image: url('/public/images/backfon.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #fff;
-    font-size: 14px; /* Зменшений розмір шрифту */
-    line-height: 1.5;
-    padding: 30px 15px; /* Менші відступи */
-    overflow-y: auto; /* Додає прокрутку, якщо контент не влазить */
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 50px 20px; /* Оптимальні відступи */
+    overflow-y: auto;
 }
 
 /* Заголовок */
 .text {
     font-family: 'Arial', sans-serif;
-    font-size: 30px; /* Зменшений заголовок */
+    font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
     color: white;
     text-align: center;
     letter-spacing: 1.5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* Карточки з текстом */
 .card {
-color: white;
-    width: 80%; /* Контейнер займає 80% ширини */
+    width: 80%;
     max-width: 1100px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
     text-align: left;
+    max-height: 70vh; /* ✅ Обмежує висоту для коректної прокрутки */
+    overflow: auto; /* ✅ Додає прокрутку всередині контейнера */
 }
 
 .card p {
-    margin-bottom: 8px; /* Менші відступи між абзацами */
+    margin-bottom: 10px;
 }
 
 .card strong {
-    font-size: 16px; /* Трохи менший шрифт */
+    font-size: 18px;
 }
 
+/* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 40px 15px;
+    }
 
+    .text {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 25px;
+        max-height: 65vh; /* ✅ Регулюємо висоту на планшетах */
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (до 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 10px;
+    }
+
+    .text {
+        font-size: 26px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 20px;
+        max-height: 60vh; /* ✅ Зменшуємо висоту для маленьких екранів */
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ IPHONE (iPhone 8 - iPhone 16) */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 10px;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 18px;
+        max-height: 80vh; /* ✅ Зменшена висота для iPhone */
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ МАЛИХ ТЕЛЕФОНІВ (iPhone SE, Samsung A-серія) */
+@media (max-width: 375px) {
+    .container {
+        padding: 20px 5px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+        max-height: 50vh; /* ✅ Мінімізуємо висоту для вузьких екранів */
+    }
+}

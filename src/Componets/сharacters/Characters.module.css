@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 15px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('/public/images/backfon.png');
     background-size: cover;
     background-position: center;
@@ -14,6 +14,7 @@
     font-size: 18px;
     line-height: 1.8;
     padding: 20px;
+    overflow-y: auto;
 }
 
 /* Заголовок */
@@ -24,16 +25,18 @@
     color: white;
     text-align: center;
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
-/* Блок аватарок персонажів */
+/* 📌 Блок аватарок персонажів */
 .avatars {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 5px;
+    position: relative;
+    top: -10px; /* Переміщено вниз на 100px */
 }
 
 .avatar {
@@ -54,34 +57,55 @@
     box-shadow: 0 0 12px rgba(72, 128, 255, 0.8);
 }
 
-/* Основний блок персонажа */
-.characterBox {
-    display: flex;
-    align-items: center;
-
-    width: 90%;
-    max-width: 1400px;
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-
+/* 📌 Зображення персонажа без контейнера */
+.characterImage {
+    left: -19px;
+    width: 100%; /* Збільшено на максимум */
+    max-width: 1130px;
+    height: auto;
+    min-height: 630px; /* Збільшено висоту */
+    object-fit: contain;
+    border-radius: 12px;
+    position: relative;
+    top: -60px; /* Переміщено вниз на 200px */
 }
 
-/* Контейнер для зображення персонажа */
-.imageContainer {
-    flex: 1;
-    max-width: 600px; /* Збільшуємо розмір */
+/* 📌 АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (до 768px) */
+@media (max-width: 768px) {
+    .characterImage {
+        max-width: 630px;
+        min-height: 430px;
+    }
 }
 
+/* 📌 АДАПТАЦІЯ ДЛЯ ВУЗЬКИХ ЕКРАНІВ (до 480px) */
+@media (max-width: 480px) {
+    .characterImage {
+        max-width: 430px;
+        min-height: 330px;
+    }
+}
 
+/* 📌 АДАПТАЦІЯ ДЛЯ ДУЖЕ ВУЗЬКИХ ЕКРАНІВ (до 375px) */
+@media (max-width: 375px) {
+    .characterImage {
+        max-width: 330px;
+        min-height: 280px;
+    }
+}
 
+@media (max-width: 768px) and (max-height: 1024px) {
+    .title{
+        transform: translateY(45px);
+    }
+    .characterImage {
+        transform: translateY(115px);
+    }
 
-.textContainer h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    .avatars {
+        transform: translateY(30px);
+    }
+
 }
 
 

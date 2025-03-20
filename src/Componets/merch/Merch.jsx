@@ -32,7 +32,6 @@ const Merch = () => {
                     <p className={styles.footerText}>
                         {merchText.buyRedirectMessage}{" "}
                         <a href={merchText.buyUrl} target="_blank" rel="noopener noreferrer">
-                            GameBuy
                         </a>.
                     </p>
                 </div>

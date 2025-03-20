@@ -1,8 +1,42 @@
 .foto {
     display: block;
-    margin: 250px auto 0;    /* Відступ 30px з верхньої частини */
-    width: 617px;           /* Ширина 617px */
-    height: 190px;          /* Висота 190px */
+    margin: 250px auto 0; /* Відступ зверху */
+    width: 617px; /* Стандартна ширина */
+    height: auto; /* Автоматична висота */
     object-fit: contain;
     transform: translateX(-340px);
+    max-width: 100%; /* Запобігає виходу за межі екрану */
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
+@media (max-width: 1024px) {
+    .foto {
+        margin: 180px auto 0;
+        width: 80%;
+        transform: translateX(0); /* Вирівнюємо */
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (до 768px) */
+@media (max-width: 768px) {
+    .foto {
+        margin: 150px auto 0;
+        width: 75%;
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ IPHONE (iPhone 8 - iPhone 16) */
+@media (max-width: 480px) {
+    .foto {
+        margin: 120px auto 0;
+        width: 85%;
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ МАЛИХ ТЕЛЕФОНІВ (iPhone SE, Samsung A-серія) */
+@media (max-width: 375px) {
+    .foto {
+        margin: 100px auto 0;
+        width: 90%;
+    }
 }

@@ -1,71 +1,110 @@
+/* Загальні стилі */
 .container {
+        position: relative; /* ОБОВ'ЯЗКОВО */
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрує по горизонталі */
-        justify-content: center; /* Центрує по вертикалі */
+        align-items: center;
+        justify-content: center;
         gap: 20px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw; /* 100% ширини екрану */
-        height: 100vh; /* 100% висоти екрану */
+        width: 100vw;
+        height: 100vh;
         background-image: url('/public/images/backfon.png');
-
-        background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
-        background-position: center; /* Центруємо фонове зображення */
-        background-attachment: fixed; /* Фіксуємо фонове зображення */
-        color: #4b4b4b; /* Колір тексту */
-        font-size: 16px; /* Розмір шрифту */
-        line-height: 1.6; /* Висота рядка */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #4b4b4b;
+        font-size: 16px;
+        line-height: 1.6;
 }
-
-
-
-
 
 .textStyle {
-        font-family: 'Arial', sans-serif; /* Шрифт Arial */
-        font-size: 36px; /* Розмір шрифту */
-        font-weight: bold; /* Товщина шрифту */
-        text-transform: uppercase; /* Усі літери великі */
-        color: white; /* Колір тексту */
-        text-align: center; /* Вирівнювання тексту */
+        font-family: 'Arial', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
         letter-spacing: 2px;
-        transform: translateY(-150px);
+        transform: translateY(-140px);
+}
+
+/* Позиціонування авторів */
+.authorKaterina { transform: translateX(-465px) translateY(-175px); }
+.authorImageValentina { top: calc(50% + 15px); position: absolute; transform: translateY(-175px); }
+.authorImageVolodymyr { top: calc(50% + 15px); position: absolute; transform: translateX(430px) translateY(-175px); }
+.authorImageOleksiy { position: absolute; top: calc(50% + 90px); transform: translateX(-220px); }
+.authorImageRoma { position: absolute; top: calc(50% + 90px); transform: translateX(220px); }
+
+/* 📌 Адаптація для різних розмірів екрану */
+@media (max-width: 1024px) {
+        .textStyle { font-size: 50px; transform: translateY(-505px); max-width: 80%; }
+        .authorKaterina { transform: translateX(-25px) translateY(-425px) scale(1.5); }
+        .authorImageValentina { transform: translateY(-230px) translateX(-25px) scale(1.5); }
+        .authorImageVolodymyr { transform: translateX(-10px) translateY(-55px) scale(1.5); }
+        .authorImageRoma { transform: translateY(45px) translateX(-300px) scale(1.5); }
+        .authorImageOleksiy { transform: translateX(255px) translateY(45px) scale(1.5); }
 }
 
 
-.imgmoveleft {
-        transform: translateX(-465px) translateY(-175px);/* Це перемістить зображення вліво на 465px */
-
-
-}
-
-.imageup {
-        top: calc(50% + 15px);
-        position: absolute;
-        transform: translateY(-175px);
+@media (max-width: 1024px) and (max-height: 600px) {
+        .textStyle { font-size: 50px; transform: translateY(-165px); }
+        .authorKaterina { transform: translateX(-15px) translateY(-170px) scale(1.0); }
+        .authorImageValentina { transform: translateY(-30px) translateX(215px) scale(1.0); }
+        .authorImageVolodymyr { transform: translateX(-225px) translateY(-30px) scale(1.0); }
+        .authorImageRoma { transform: translateY(30px) translateX(-250px) scale(1.0); }
+        .authorImageOleksiy { transform: translateX(200px) translateY(30px) scale(1.0); }
 }
 
 
-.imageupdouble {
-        top: calc(50% + 15px);
-        position: absolute;
-        transform: translateX(430px) translateY(-175px);
+@media (max-width: 854px) {
+        .textStyle { font-size: 50px; transform: translateY(-450px); }
+        .authorKaterina { transform: translateX(-15px) translateY(-430px) scale(1.5); }
+        .authorImageValentina { transform: translateY(-240px) translateX(-15px) scale(1.5); }
+        .authorImageVolodymyr { transform: translateX(-10px) translateY(-70px) scale(1.5); }
+        .authorImageRoma { transform: translateY(30px) translateX(-250px) scale(1.5); }
+        .authorImageOleksiy { transform: translateX(200px) translateY(30px) scale(1.5); }
 }
 
-
-
-.imagetreble {
-        position: absolute;
-        top: calc(50% + 90px); /* Опускаємо вниз */
-        transform: translateX(-220px); /* Зміщуємо ближче до центру */
+@media (max-width: 834px) {
+        .textStyle { font-size: 28px; transform: translateY(-400px); }
+        .authorKaterina { transform: translateY(-375px) scale(0.9); }
+        .authorImageValentina { transform: translateY(-250px) scale(0.9); }
+        .authorImageVolodymyr { transform: translateY(-110px) scale(0.9); }
+        .authorImageOleksiy { transform: translateY(-55px) scale(0.9); }
+        .authorImageRoma { transform: translateY(65px) scale(0.9); }
 }
 
+@media (max-width: 768px) {
+        .textStyle { font-size: 36px; transform: translateY(-350px); }
+        .authorKaterina { transform: translateY(-290px); }
+        .authorImageValentina { transform: translateX(-180px) translateY(-155px); }
+        .authorImageVolodymyr { transform: translateX(200px) translateY(-155px); }
+        .authorImageOleksiy { transform: translateX(-225px); }
+        .authorImageRoma { transform: translateX(200px); }
+}
 
+@media (max-width: 480px) {
+        .textStyle { font-size: 24px; transform: translateY(-295px); max-width: 85%; }
+        .authorKaterina { transform: translateX(0) translateY(-280px) scale(0.8); }
+        .authorImageValentina { transform: translateY(-195px) scale(0.8); }
+        .authorImageVolodymyr { transform: translateX(0) translateY(-90px) scale(0.8); }
+        .authorImageRoma { transform: translateY(-40px) scale(0.8); }
+        .authorImageOleksiy { transform: translateY(75px) scale(0.8); }
+}
 
-.imagecustom {
-        position: absolute;
-        top: calc(50% + 90px); /* Опускаємо вниз */
-        transform: translateX(220px); /* Зміщуємо ближче до центру */
+@media (max-width: 375px) {
+        .textStyle { font-size: 20px; transform: translateY(-235px); max-width: 80%; }
+        .authorImageOleksiy { transform: translateX(0) translateY(50px) scale(0.8); }
+        .authorImageRoma { transform: translateX(0) translateY(-65px) scale(0.8); }
+        .authorKaterina { transform: translateX(0) translateY(-260px) scale(0.8); }
+        .authorImageValentina { transform: translateY(-190px) scale(0.8); }
+        .authorImageVolodymyr { transform: translateX(0) translateY(-90px) scale(0.8); }
+}
+@media (max-width: 540px ) and (max-height: 720px) {
+        .textStyle { font-size: 20px; transform: translateY(-235px); max-width: 80%; }
+        .authorImageOleksiy { transform: translateX(0) translateY(50px) scale(0.8); }
+        .authorImageRoma { transform: translateX(0) translateY(-65px) scale(0.8); }
+        .authorKaterina { transform: translateX(0) translateY(-260px) scale(0.8); }
+        .authorImageValentina { transform: translateY(-190px) scale(0.8); }
+        .authorImageVolodymyr { transform: translateX(0) translateY(-90px) scale(0.8); }
 }

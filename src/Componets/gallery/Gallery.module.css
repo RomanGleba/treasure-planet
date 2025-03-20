@@ -1,77 +1,82 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрує по горизонталі */
-    justify-content: center; /* Центрує по вертикалі */
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* 100% ширини екрану */
-    height: 100vh; /* 100% висоти екрану */
+    width: 100vw;
+    height: 100vh;
     background-image: url('/public/images/backfon.png');
-
-    background-size: cover; /* Налаштовуємо фонове зображення на покриття екрану */
-    background-position: center; /* Центруємо фонове зображення */
-    background-attachment: fixed; /* Фіксуємо фонове зображення */
-    color: #4b4b4b; /* Колір тексту */
-    font-size: 16px; /* Розмір шрифту */
-    line-height: 1.6; /* Висота рядка */
-}
-
-
-
-
-.title {
-    font-size: 26px;
-    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.description {
     font-size: 16px;
-    color: #fff;
+    line-height: 1.6;
+    overflow: hidden; /* Запобігає появі скролбарів */
 }
 
-.contactList {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.contactItem {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-}
-
-.contactItem:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Стилі для заголовка */
 .textitem {
-
-
-    font-family: 'Arial', sans-serif; /* Шрифт Arial */
-    font-size: 36px; /* Розмір шрифту */
-    font-weight: bold; /* Товщина шрифту */
-    text-transform: uppercase; /* Усі літери великі */
-    color: white; /* Колір тексту */
-    text-align: center; /* Вирівнювання тексту */
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
     letter-spacing: 2px;
-    transform: translateY(-60px);
-
+    margin-bottom: 20px;
 }
 
+/* Контейнер для зображення */
+.container img {
+    width: 80%;  /* Зображення займає 80% ширини контейнера */
+    max-width: 1100px; /* Максимальна ширина для великих екранів */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+    display: block;
+    object-fit: contain; /* Вписує зображення в область */
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
+@media (max-width: 1024px) {
+    .container img {
+        width: 85%;
+        max-width: 900px;
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ (до 768px) */
+@media (max-width: 768px) {
+    .container img {
+        width: 90%;
+        max-width: 600px;
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ IPHONE 8 - IPHONE 16 (до 480px) */
+@media (max-width: 480px) {
+    .container img {
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .textitem {
+        font-size: 28px; /* Менший заголовок */
+    }
+}
+
+/* 📌 АДАПТАЦІЯ ДЛЯ МАЛИХ ТЕЛЕФОНІВ (iPhone SE, Samsung A-серія) */
+@media (max-width: 375px) {
+    .container img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .textitem {
+        font-size: 24px;
+    }
+}
 
