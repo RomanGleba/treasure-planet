@@ -1,0 +1,84 @@
+.privacyContainer {
+  position: fixed; /* Щоб займати весь екран */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto; /* Прокрутка */
+  padding: 3rem 2rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.termsDate {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #aaa;
+  max-width: 900px;
+}
+
+.termsIntro {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  max-width: 900px;
+  text-align: justify;
+}
+
+.termsSection {
+  margin-bottom: 2rem;
+  max-width: 900px;
+
+  h2 {
+    color: #4acaff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    text-align: justify;
+  }
+}
+
+.goBackButton {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  color: #4acaff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #4acaff;
+  }
+}
+
+
+
+.goBackButton {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  color: #4acaff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #4acaff;
+  }
+}

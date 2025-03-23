@@ -102,3 +102,60 @@
     transform: scale(0.95);
     background: linear-gradient(90deg, #3b58ff, #5778ff);
 }
+
+
+@media (max-width: 360px)  {
+    .container {
+        padding: 1rem;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .title {
+        padding: 50px;
+        font-size: 1.3rem;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .merchBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .imageContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .merchImage {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .textContainer {
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    .buyButton {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .footerText {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+
+

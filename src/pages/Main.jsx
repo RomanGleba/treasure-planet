@@ -7,7 +7,9 @@ import Avtors from "../Componets/avtors/Avtors";
 import Home from "../Componets/home/Home";
 import Characters from "../Componets/сharacters/Characters";
 import Merch from "../Componets/merch/Merch";
-
+import Terms from "../Componets/conditions/terms/Terms";
+import Footer from "../Componets/conditions/footer/Footer";
+import Privacy from "../Componets/./conditions/privacypolicy/Privacy";
 const Main = () => {
     // Отримуємо збережену вкладку з localStorage або ставимо значення за замовчуванням (0)
     const [currentPage, setCurrentPage] = useState(() => {
@@ -28,8 +30,13 @@ const Main = () => {
             {currentPage === 3 && <Characters />}
             {currentPage === 4 && <Avtors />}
             {currentPage === 5 && <Merch />}
+            {currentPage === 0 && <Footer setCurrentPage={setCurrentPage} />}
+            {currentPage === 6 && <Terms setCurrentPage={setCurrentPage} />}
+            {currentPage === 7 && <Privacy setCurrentPage={setCurrentPage} />}
+
         </div>
     );
 };
 
 export default Main;
+

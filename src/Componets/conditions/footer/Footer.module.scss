@@ -1,0 +1,55 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; // додано
+  width: 100%;
+  box-sizing: border-box; // ✅ ключовий момент — padding враховується всередині ширини
+
+  background: rgba(10, 12, 18, 0.8);
+  backdrop-filter: blur(6px);
+  color: #aaa;
+  padding: 1rem 2rem 1.5rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  z-index: 100;
+
+  overflow-x: hidden; // ⛔️ блокує горизонтальний скрол в самому футері
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a, button {
+      background: none;
+      border: none;
+      color: #4acaff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: underline;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: #ffffff;
+        text-shadow: 0 0 4px #4acaff;
+      }
+    }
+
+    span {
+      color: dimgray;
+    }
+  }
+}
