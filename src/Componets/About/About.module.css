@@ -2,20 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
+    justify-content: center; /* або flex-start, якщо потрібно від верху */
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* ⬅️ займає рівно висоту вікна браузера */
     background-image: url('/public/images/backfon.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
     font-size: 16px;
     line-height: 1.6;
-    padding: 50px 20px; /* Оптимальні відступи */
-    overflow-y: auto;
+    padding: 0; /* ⬅️ прибираємо падінги, якщо хочемо "на весь екран" */
+    margin: 0;
+    overflow: hidden; /* блокує прокрутку всередині */
 }
+
 
 /* Заголовок */
 .text {

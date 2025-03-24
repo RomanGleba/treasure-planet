@@ -1,11 +1,11 @@
 .privacyContainer {
-  position: fixed; /* Щоб займати весь екран */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  overflow-y: auto; /* Прокрутка */
-  padding: 3rem 2rem;
+  height: 100vh; /* 🔁 тепер займає весь екран */
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
   color: #f0f0f0;
   line-height: 1.6;
   background-color: rgba(0, 0, 0, 0.6);
@@ -17,53 +17,41 @@
   align-items: center;
 }
 
+.date,
+.intro,
+.section {
+  width: 100%;
+  max-width: 100%;
+}
+
 .date {
   font-style: italic;
   margin-bottom: 1rem;
   color: #aaa;
-  max-width: 900px;
+  font-size: 0.95rem;
 }
 
 .intro {
   margin-bottom: 2rem;
   font-size: 1rem;
-  max-width: 900px;
   text-align: justify;
 }
 
 .section {
   margin-bottom: 2rem;
-  max-width: 900px;
 
   h2 {
     color: #4acaff;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
   }
 
   p {
     margin-bottom: 0.5rem;
     text-align: justify;
+    font-size: 1rem;
   }
 }
-
-.backButton {
-  position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  background: none;
-  border: none;
-  color: #4acaff;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: underline;
-
-  &:hover {
-    color: #ffffff;
-    text-shadow: 0 0 5px #4acaff;
-  }
-}
-
-
 
 .backButton {
   position: absolute;
@@ -80,5 +68,54 @@
   &:hover {
     color: #ffffff;
     text-shadow: 0 0 5px #4acaff;
+  }
+}
+
+/* 📱 Адаптація для мобільних */
+@media (max-width: 768px) {
+  .privacyContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+  }
+
+  .backButton {
+    font-size: 0.9rem;
+    top: 0.75rem;
+    left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacyContainer {
+    padding: 1rem 0.75rem;
+  }
+
+  .intro {
+    font-size: 0.9rem;
+  }
+
+  .section h2 {
+    font-size: 1rem;
+  }
+
+  .section p {
+    font-size: 0.9rem;
+  }
+
+  .backButton {
+    font-size: 0.85rem;
+    top: 0.5rem;
+    left: 0.75rem;
   }
 }

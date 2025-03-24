@@ -1,55 +1,111 @@
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; // додано
+  background: #2d2d2d;
+  color: #ccc;
+  padding: 1rem 1rem 0.5rem;
+  font-size: 0.8rem;
   width: 100%;
-  box-sizing: border-box; // ✅ ключовий момент — padding враховується всередині ширини
+  box-sizing: border-box;
 
-  background: rgba(10, 12, 18, 0.8);
-  backdrop-filter: blur(6px);
-  color: #aaa;
-  padding: 1rem 2rem 1.5rem;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  z-index: 100;
-
-  overflow-x: hidden; // ⛔️ блокує горизонтальний скрол в самому футері
-
-  .content {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
-  .links {
+  .legal {
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
 
-    a, button {
+    button {
       background: none;
       border: none;
       color: #4acaff;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       text-decoration: underline;
-      transition: all 0.2s ease-in-out;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: #ffffff;
-        text-shadow: 0 0 4px #4acaff;
+        color: #fff;
+      }
+
+      &:focus {
+        outline: none;
+        color: #fff;
       }
     }
+  }
 
-    span {
-      color: dimgray;
+  .copy {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: gray;
+    border-top: 1px solid #444;
+    padding-top: 0.5rem;
+  }
+
+  .column {
+    flex: 1 1 300px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.5;
+  }
+
+  /* 🔽 АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .column {
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+
+    .legal {
+      align-items: center;
+    }
+
+    .legal button {
+      font-size: 0.9rem;
+    }
+
+    .title {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.8rem;
     }
   }
 }
+
