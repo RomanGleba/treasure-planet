@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Characters.module.css';
+import styles from './Characters.module.scss';
 
 const characters = [
     {

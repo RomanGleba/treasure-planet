@@ -5,7 +5,7 @@
     justify-content: center; /* або flex-start, якщо потрібно від верху */
     width: 100%;
     height: 100vh; /* ⬅️ займає рівно висоту вікна браузера */
-    background-image: url('/public/images/backfon.png');
+    background-image: url('../../../public/images/backfon.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

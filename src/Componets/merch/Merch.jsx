@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './merch.module.css';
+import styles from './merch.module.scss';
 import merchText from '../../content/MerchText.json';
 
 const Merch = () => {

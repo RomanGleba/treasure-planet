@@ -5,7 +5,7 @@ import About from "../Componets/About/About";
 import Gallery from "../Componets/gallery/Gallery";
 import Avtors from "../Componets/avtors/Avtors";
 import Home from "../Componets/home/Home";
-import Characters from "../Componets/сharacters/Characters";
+import Characters from "../Componets/characters/Characters";
 import Merch from "../Componets/merch/Merch";
 import Terms from "../Componets/conditions/terms/Terms";
 import Footer from "../Componets/conditions/footer/Footer";
