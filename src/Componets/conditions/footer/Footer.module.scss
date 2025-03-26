@@ -24,14 +24,16 @@
     button {
       background: none;
       border: none;
-      color: #4acaff;
+      color: #fff;
       cursor: pointer;
       font-size: 0.85rem;
-      text-decoration: underline;
+      font-weight: 600;
+
       transition: color 0.3s ease;
 
       &:hover {
         color: #fff;
+        text-decoration: underline;
       }
 
       &:focus {
