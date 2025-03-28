@@ -9,10 +9,10 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2rem;
   }
 
   .legal {
@@ -28,17 +28,13 @@
       cursor: pointer;
       font-size: 0.85rem;
       font-weight: 600;
-
       transition: color 0.3s ease;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: #fff;
         text-decoration: underline;
-      }
-
-      &:focus {
         outline: none;
-        color: #fff;
       }
     }
   }
@@ -50,15 +46,17 @@
     color: gray;
     border-top: 1px solid #444;
     padding-top: 0.5rem;
+    width: 100%;
   }
 
   .column {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+    min-width: 200px;
 
     &:empty {
       display: none;
@@ -79,26 +77,42 @@
     line-height: 1.5;
   }
 
-  /* 🔽 АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ */
+  /* --------------- АДАПТАЦІЯ --------------- */
+
+  /* Tablets */
+  @media (max-width: 1024px) {
+    .container {
+      justify-content: center;
+      padding: 1rem;
+      gap: 2rem;
+    }
+    .column {
+      flex: 1 1 200px;
+      align-items: center;
+      text-align: center;
+    }
+    .legal {
+      align-items: center;
+    }
+  }
+
+  /* Phones */
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 1rem;
+      padding: 1rem;
     }
 
     .column {
-      align-items: center;
-      padding: 0.5rem 0;
-    }
-
-    .legal {
-      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 0;
     }
 
     .legal button {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .title {
@@ -109,5 +123,43 @@
       font-size: 0.8rem;
     }
   }
-}
 
+  /* Small Phones */
+  @media (max-width: 480px) {
+    .column {
+      padding: 0.5rem 0;
+      gap: 0.5rem;
+    }
+
+    .title {
+      font-size: 0.95rem;
+    }
+
+    .legal button {
+      font-size: 0.8rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
+
+    .copy {
+      font-size: 0.65rem;
+    }
+  }
+
+  /* Very Small Devices */
+  @media (max-width: 360px) {
+    .title {
+      font-size: 0.9rem;
+    }
+
+    .legal button {
+      font-size: 0.75rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}
