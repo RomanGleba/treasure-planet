@@ -50,83 +50,117 @@
 /* ======================== */
 
 @media (max-width: 768px) {
-
-  /* Sidebar */
-  .sidebar {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* прозорість */
-    backdrop-filter: blur(4px);       /* glass effect */
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    z-index: 2000;
-  }
-
-  .open {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  /* Burger Button */
   .menuButton {
-    display: block;
     position: fixed;
     top: 15px;
     left: 15px;
-    width: 30px;
-    height: 24px;
+    z-index: 1100;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Hover */
+  .menuButton:hover {
+
+    transform: scale(1.35);
+  }
+
+  /* Bounce-ефект */
+  .menuButton.open {
+    animation: openButtonBounce 0.4s ease forwards;
+  }
+
+  @keyframes openButtonBounce {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(15deg); }
+    100% { transform: scale(1.1) rotate(90deg); }
+  }
+
+
+  /* ======================= */
+  /*         Overlay         */
+  /* ======================= */
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+
+
+  /* ======================= */
+  /*         Sidebar         */
+  /* ======================= */
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 68vh; /* фіксована висота */
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+
+  /* ======================= */
+  /*     Navigation Links    */
+  /* ======================= */
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sidebar nav button {
     background: none;
     border: none;
+    color: #ddd;
+    font-size: 16px;
+    text-align: left;
+    padding: 8px 12px;
     cursor: pointer;
-    z-index: 3000;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
-  .menuButton span,
-  .menuButton::before,
-  .menuButton::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
-    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.4s ease;
+  .sidebar nav button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
   }
 
-  .menuButton span {
-    top: 50%;
-    transform: translateY(-50%);
+  .sidebar nav button.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
   }
 
-  .menuButton::before {
-    top: 0;
-  }
-
-  .menuButton::after {
-    bottom: 0;
-  }
-
-  /* Burger Open Animation */
-  .openButton span {
-    opacity: 0;
-  }
-
-  .openButton::before {
-    transform: translateY(11px) rotate(45deg);
-  }
-
-  .openButton::after {
-    transform: translateY(-11px) rotate(-45deg);
-  }
 }
 
 /* ======================== */

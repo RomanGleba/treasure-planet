@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.scss';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = ({ setCurrentPage }) => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -17,27 +18,33 @@ const Navbar = ({ setCurrentPage }) => {
     const handleClick = (index) => {
         setCurrentPage(index);
         setActiveIndex(index);
-        setSidebarActive(false); // Закриваємо після кліку
-    };
-
-    const toggleSidebar = () => {
-        setSidebarActive(!sidebarActive);
+        setSidebarActive(false); // закриваємо при кліку на пункт
     };
 
     return (
-        <header className={styles.header}>
-            <div className={styles.container}>
-                {/* кнопка відкриття/закриття sidebar */}
+        <>
+            {/* Кнопка відкриття показується лише коли sidebar закритий */}
+            {!sidebarActive && (
                 <button
-                    className={`${styles.menuButton} ${sidebarActive ? styles.openButton : ''}`}
-                    onClick={toggleSidebar}
-                    aria-label="Меню"
+                    className={styles.menuButton}
+                    onClick={() => setSidebarActive(true)}
+                    aria-label="Відкрити меню"
                 >
-                    <span></span>
+                    <AiOutlineMenu size={30} />
                 </button>
+            )}
 
-                {/* inline navbar тільки для десктопу */}
-                <nav className={styles.frame3} aria-label="Main navigation">
+            {/* Overlay для закриття */}
+            {sidebarActive && (
+                <div
+                    className={styles.overlay}
+                    onClick={() => setSidebarActive(false)}
+                />
+            )}
+
+            {/* Sidebar */}
+            <div className={`${styles.sidebar} ${sidebarActive ? styles.open : ''}`}>
+                <nav>
                     {menuItems.map((item) => (
                         <button
                             key={item.index}
@@ -49,20 +56,7 @@ const Navbar = ({ setCurrentPage }) => {
                     ))}
                 </nav>
             </div>
-
-            {/* Sidebar */}
-            <div className={`${styles.sidebar} ${sidebarActive ? styles.open : ''}`}>
-                {menuItems.map((item) => (
-                    <button
-                        key={item.index}
-                        onClick={() => handleClick(item.index)}
-                        className={activeIndex === item.index ? styles.active : ''}
-                    >
-                        {item.label}
-                    </button>
-                ))}
-            </div>
-        </header>
+        </>
     );
 };
 

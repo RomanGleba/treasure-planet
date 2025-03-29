@@ -28,8 +28,8 @@ const Main = () => {
                 {currentPage === 0 && (
                     <>
                         <Home />
-                        <div className={styles.scrollSpacer} />
-                        <Footer setCurrentPage={setCurrentPage} />
+                        <div/>
+
                     </>
                 )}
 
@@ -41,6 +41,7 @@ const Main = () => {
                 {currentPage === 6 && <Terms setCurrentPage={setCurrentPage} />}
                 {currentPage === 7 && <Privacy setCurrentPage={setCurrentPage} />}
             </main>
+            <Footer setCurrentPage={setCurrentPage} />
         </div>
     );
 };
