@@ -18,23 +18,39 @@ const Navbar = ({ setCurrentPage }) => {
     const handleClick = (index) => {
         setCurrentPage(index);
         setActiveIndex(index);
-        setSidebarActive(false); // закриваємо при кліку на пункт
+        setSidebarActive(false);
     };
 
     return (
-        <>
-            {/* Кнопка відкриття показується лише коли sidebar закритий */}
-            {!sidebarActive && (
-                <button
-                    className={styles.menuButton}
-                    onClick={() => setSidebarActive(true)}
-                    aria-label="Відкрити меню"
-                >
-                    <AiOutlineMenu size={30} />
-                </button>
-            )}
+        <header className={styles.header}>
+            <div className={styles.container}>
 
-            {/* Overlay для закриття */}
+                {/* Burger (mobile only) */}
+                {!sidebarActive && (
+                    <button
+                        className={styles.menuButton}
+                        onClick={() => setSidebarActive(true)}
+                        aria-label="Відкрити меню"
+                    >
+                        <AiOutlineMenu size={30} />
+                    </button>
+                )}
+
+                {/* Desktop navbar */}
+                <nav className={styles.frame3} aria-label="Main navigation">
+                    {menuItems.map((item) => (
+                        <button
+                            key={item.index}
+                            onClick={() => handleClick(item.index)}
+                            className={activeIndex === item.index ? styles.active : ''}
+                        >
+                            {item.label}
+                        </button>
+                    ))}
+                </nav>
+            </div>
+
+            {/* Overlay */}
             {sidebarActive && (
                 <div
                     className={styles.overlay}
@@ -42,7 +58,7 @@ const Navbar = ({ setCurrentPage }) => {
                 />
             )}
 
-            {/* Sidebar */}
+            {/* Sidebar (mobile only) */}
             <div className={`${styles.sidebar} ${sidebarActive ? styles.open : ''}`}>
                 <nav>
                     {menuItems.map((item) => (
@@ -56,7 +72,7 @@ const Navbar = ({ setCurrentPage }) => {
                     ))}
                 </nav>
             </div>
-        </>
+        </header>
     );
 };
 
