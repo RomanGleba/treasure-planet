@@ -6,6 +6,7 @@
     object-fit: contain;
     transform: translateX(-340px);
     max-width: 100%; /* Запобігає виходу за межі екрану */
+    position: relative;
 }
 
 

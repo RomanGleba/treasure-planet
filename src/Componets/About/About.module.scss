@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* або flex-start, якщо потрібно від верху */
+    justify-content: center;
     width: 100%;
-    height: 100vh; /* ⬅️ займає рівно висоту вікна браузера */
+    height: 100vh;
     background-image: url('../../../public/images/backfon.png');
     background-size: cover;
     background-position: center;
@@ -13,11 +13,11 @@
     color: #fff;
     font-size: 16px;
     line-height: 1.6;
-    padding: 0; /* ⬅️ прибираємо падінги, якщо хочемо "на весь екран" */
+    padding: 0;
     margin: 0;
-    overflow: hidden; /* блокує прокрутку всередині */
+    overflow: hidden;
+    box-sizing: border-box;
 }
-
 
 /* Заголовок */
 .text {
@@ -29,9 +29,10 @@
     text-align: center;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
+    transition: font-size 0.3s;
 }
 
-/* Карточки з текстом */
+/* Карточки */
 .card {
     width: 80%;
     max-width: 1100px;
@@ -42,8 +43,11 @@
     backdrop-filter: blur(12px);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
     text-align: left;
-    max-height: 70vh; /* ✅ Обмежує висоту для коректної прокрутки */
-    overflow: auto; /* ✅ Додає прокрутку всередині контейнера */
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s;
 }
 
 .card p {
@@ -54,7 +58,7 @@
     font-size: 18px;
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
+/* 📱 Планшети */
 @media (max-width: 1024px) {
     .container {
         padding: 40px 15px;
@@ -67,11 +71,11 @@
     .card {
         width: 90%;
         padding: 25px;
-        max-height: 65vh; /* ✅ Регулюємо висоту на планшетах */
+        max-height: 65vh;
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (до 768px) */
+/* 📱 Смартфони */
 @media (max-width: 768px) {
     .container {
         padding: 30px 10px;
@@ -84,14 +88,14 @@
     .card {
         width: 95%;
         padding: 20px;
-        max-height: 60vh; /* ✅ Зменшуємо висоту для маленьких екранів */
+        max-height: 60vh;
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ IPHONE (iPhone 8 - iPhone 16) */
+/* 📱 iPhone (8 - 16) */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 10px;
+        padding: 25px 8px;
     }
 
     .text {
@@ -100,16 +104,15 @@
 
     .card {
         width: 100%;
-        padding: 18px;
-        max-height: 80vh; /* ✅ Зменшена висота для iPhone */
+        padding: 16px;
+        max-height: 75vh;
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ МАЛИХ ТЕЛЕФОНІВ (iPhone SE, Samsung A-серія) */
+/* 📱 Дуже маленькі екрани */
 @media (max-width: 375px) {
     .container {
-        padding: 60px 5px;
-
+        padding: 20px 5px;
     }
 
     .text {
@@ -118,8 +121,23 @@
 
     .card {
         width: 100%;
+        padding: 14px;
+        max-height: 65vh;
+    }
+}
 
-        max-height: 50vh; /* ✅ Мінімізуємо висоту для вузьких екранів */
+/* 📱 Супер маленькі (наприклад 320px) */
+@media (max-width: 320px) {
+    .container {
+        padding: 15px 5px;
+    }
 
+    .text {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 12px;
+        max-height: 60vh;
     }
 }
