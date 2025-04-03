@@ -29,7 +29,18 @@
 .frame3 {
   display: flex;
   gap: 30px;
+font-size: 200px;
+
 }
+.frame3 button {
+  padding: 12px 24px; /* збільшений відступ всередині */
+  font-size: 18px;     /* більший шрифт */
+  border-radius: 8px;  /* за бажанням - заокруглення */
+  transition: 0.3s;    /* плавність для ховера */
+}
+
+
+
 
 @media (max-width: 768px) {
   .frame3 {
@@ -64,24 +75,24 @@
     align-items: center;
     justify-content: center;
     color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.4s ease, color 0.3s ease;
   }
 
   /* Hover */
   .menuButton:hover {
-
-    transform: scale(1.35);
+    transform: scale(1.15) rotate(-8deg); /* нахил вліво */
   }
 
-  /* Bounce-ефект */
+  /* Ефект при відкритті */
   .menuButton.open {
-    animation: openButtonBounce 0.4s ease forwards;
+    animation: burgerBounceLeft 0.5s ease forwards;
   }
 
-  @keyframes openButtonBounce {
+  /* Анімація з нахилом вліво */
+  @keyframes burgerBounceLeft {
     0% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.2) rotate(15deg); }
-    100% { transform: scale(1.1) rotate(90deg); }
+    50% { transform: scale(1.2) rotate(-15deg); }
+    100% { transform: scale(1) rotate(-90deg); }
   }
 
 
@@ -109,7 +120,7 @@
     top: 0;
     left: 0;
     width: 220px;
-    height: 68vh; /* фіксована висота */
+    height: 100vh; /* фіксована висота */
     background: rgba(30, 30, 30, 0.5);
     backdrop-filter: blur(4px);
     padding: 20px;

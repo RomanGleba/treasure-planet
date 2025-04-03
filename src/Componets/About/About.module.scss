@@ -21,41 +21,77 @@
 
 /* Заголовок */
 .text {
-    font-family: 'Arial', sans-serif;
-    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
     color: white;
     text-align: center;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     margin-bottom: 20px;
-    transition: font-size 0.3s;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    animation: fadeInTitle 1s ease forwards;
 }
 
-/* Карточки */
+/* Карточка */
 .card {
     width: 80%;
     max-width: 1100px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 25px rgba(72, 128, 255, 0.3);
     text-align: left;
     max-height: 70vh;
     overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;
-    transition: all 0.3s;
+    opacity: 0;
+    transform: scale(0.98);
+    animation: fadeInCard 1.2s ease forwards;
 }
 
+/* Анімації */
+@keyframes fadeInCard {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Параграфи */
 .card p {
     margin-bottom: 10px;
+    transition: 0.3s;
 }
 
-.card strong {
-    font-size: 18px;
+
+
+/* Scrollbar */
+.card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.card::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 /* 📱 Планшети */
@@ -65,7 +101,7 @@
     }
 
     .text {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .card {
@@ -82,7 +118,7 @@
     }
 
     .text {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .card {
@@ -92,52 +128,25 @@
     }
 }
 
-/* 📱 iPhone (8 - 16) */
+/* 📱 Дуже вузькі */
 @media (max-width: 480px) {
-    .container {
-        padding: 25px 8px;
-    }
-
     .text {
         font-size: 24px;
     }
 
     .card {
-        width: 100%;
         padding: 16px;
         max-height: 75vh;
     }
 }
 
-/* 📱 Дуже маленькі екрани */
 @media (max-width: 375px) {
-    .container {
-        padding: 20px 5px;
-    }
-
     .text {
         font-size: 20px;
     }
 
     .card {
-        width: 100%;
         padding: 14px;
         max-height: 65vh;
-    }
-}
-
-/* 📱 Супер маленькі (наприклад 320px) */
-@media (max-width: 320px) {
-    .container {
-        padding: 15px 5px;
-    }
-
-    .text {
-        font-size: 18px;
-    }
-
-    .card {
-        padding: 12px;
-        max-height: 60vh;
     }
 }

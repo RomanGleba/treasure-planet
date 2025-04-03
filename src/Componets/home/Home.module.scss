@@ -4,41 +4,52 @@
     width: 617px; /* Стандартна ширина */
     height: auto; /* Автоматична висота */
     object-fit: contain;
-    transform: translateX(-340px);
+    transform: translateX(-430px);
+    padding: 70px;
     max-width: 100%; /* Запобігає виходу за межі екрану */
     position: relative;
 }
 
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;   /* Додає вертикальний скрол */
+    overflow-x: hidden; /* Забороняє горизонтальний */
+}
 
-/* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
-@media (max-width: 1024px) {
+
+/* ====== Планшети ====== */
+@media (min-width: 769px) and (max-width: 1366px) {
     .foto {
         margin: 180px auto 0;
         width: 80%;
-        transform: translateX(0); /* Вирівнюємо */
+        transform: translateX(-35px); /* менший зсув */
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (до 768px) */
+/* ====== Телефони ====== */
 @media (max-width: 768px) {
     .foto {
         margin: 150px auto 0;
         width: 75%;
+        transform: translateX(-60px);
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ IPHONE (iPhone 8 - iPhone 16) */
+/* ====== iPhone 8 - iPhone 16 ====== */
 @media (max-width: 480px) {
     .foto {
         margin: 120px auto 0;
         width: 85%;
+        transform: translateX(-51px);
     }
 }
 
-/* 📌 АДАПТАЦІЯ ДЛЯ МАЛИХ ТЕЛЕФОНІВ (iPhone SE, Samsung A-серія) */
+/* ====== Маленькі телефони ====== */
 @media (max-width: 375px) {
     .foto {
         margin: 100px auto 0;
         width: 90%;
+        transform: translateX(-60px); /* тут була помилка: -40 → -40px */
     }
 }
