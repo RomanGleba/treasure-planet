@@ -1,25 +1,27 @@
-.foto {
-    display: block;
-    margin: 250px auto 0; /* Відступ зверху */
-    width: 617px; /* Стандартна ширина */
-    height: auto; /* Автоматична висота */
-    object-fit: contain;
-    transform: translateX(-430px);
-    padding: 70px;
-    max-width: 100%; /* Запобігає виходу за межі екрану */
-    position: relative;
-}
-
 .container {
     width: 100vw;
     height: 100vh;
-    overflow-y: auto;   /* Додає вертикальний скрол */
-    overflow-x: hidden; /* Забороняє горизонтальний */
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: clamp(100px, 15vh, 250px);
+    padding-left: clamp(20px, 5vw, 430px);
+}
+
+.foto {
+    width: clamp(250px, 100vw, 617px);
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+    position: relative;
+    left: 35px;
+    top: 230px; /* 🔽 Зсув саме фото вниз */
 }
 
 
-
-/* ====== Телефони ====== */
+/* Телефони */
 @media (max-width: 768px) {
     .foto {
         margin: 150px auto 0;
@@ -28,7 +30,7 @@
     }
 }
 
-/* ====== iPhone 8 - iPhone 16 ====== */
+/* iPhone 8 - 16 */
 @media (max-width: 480px) {
     .foto {
         margin: 120px auto 0;
@@ -37,11 +39,11 @@
     }
 }
 
-/* ====== Маленькі телефони ====== */
+/* Маленькі телефони */
 @media (max-width: 375px) {
     .foto {
         margin: 100px auto 0;
         width: 90%;
-        transform: translateX(-60px); /* тут була помилка: -40 → -40px */
+        transform: translateX(-60px);
     }
 }
