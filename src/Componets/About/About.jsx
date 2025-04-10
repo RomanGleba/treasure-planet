@@ -12,9 +12,12 @@ const About = () => {
                     <p key={index}>{paragraph}</p>
                 ))}
             </div>
+
+            <img src='/images/game.png' alt='game' className={styles.image} />
         </div>
     );
 };
+
 
 export default About;
 

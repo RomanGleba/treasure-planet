@@ -4,8 +4,8 @@
     width: 617px; /* Стандартна ширина */
     height: auto; /* Автоматична висота */
     object-fit: contain;
-    transform: translateX(-430px);
-    padding: 70px;
+    transform: translateX(-345px);
+    padding: 40px;
     max-width: 100%; /* Запобігає виходу за межі екрану */
     position: relative;
 }
@@ -18,13 +18,11 @@
 }
 
 
-/* ====== Планшети ====== */
-@media (min-width: 769px) and (max-width: 1366px) {
+@media (max-width: 1024px) {
     .foto {
-        margin: 180px auto 0;
-        width: 80%;
-        transform: translateX(-35px); /* менший зсув */
+        left: 250px;
     }
+
 }
 
 /* ====== Телефони ====== */
@@ -32,7 +30,7 @@
     .foto {
         margin: 150px auto 0;
         width: 75%;
-        transform: translateX(-60px);
+        transform: translateX(-270px);
     }
 }
 
@@ -42,6 +40,7 @@
         margin: 120px auto 0;
         width: 85%;
         transform: translateX(-51px);
+        left: 30px;
     }
 }
 

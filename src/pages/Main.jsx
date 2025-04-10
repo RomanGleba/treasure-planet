@@ -11,6 +11,7 @@ import Terms from "../Componets/conditions/terms/Terms";
 import Footer from "../Componets/conditions/footer/Footer";
 import Privacy from "../Componets/./conditions/privacypolicy/Privacy";
 
+
 const Main = () => {
     const [currentPage, setCurrentPage] = useState(() => {
         return parseInt(localStorage.getItem("currentPage")) || 0;

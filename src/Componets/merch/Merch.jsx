@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './merch.module.scss';
+import styles from './Merch.module.scss';
 import merchText from '../../content/MerchText.json';
 
 const Merch = () => {
-    // Функція для переходу на сайт GameBuy
+    // Функція для переходу на сайт Rozetka
     const handleBuyClick = () => {
         window.location.href = merchText.buyUrl;
     };
@@ -41,5 +41,4 @@ const Merch = () => {
 };
 
 export default Merch;
-
 
