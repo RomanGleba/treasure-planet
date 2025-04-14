@@ -2,43 +2,168 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    padding: 60px 20px;
+    min-height: 100vh;
+    width: 100%;
     background-image: url('../../../public/images/backfon.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #fff;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow: hidden; /* Запобігає появі скролбарів */
+    box-sizing: border-box;
 }
 
-/* Стилі для заголовка */
+.zoomControls {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10000;
+
+    button {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: none;
+        font-size: 28px;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.fullImage {
+    transition: transform 0.3s ease;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+
+}
+
+
 .textitem {
-    font-family: 'Arial', sans-serif;
-    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(24px, 5vw, 42px);
     font-weight: bold;
     text-transform: uppercase;
     color: white;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 20px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
-/* Контейнер для зображення */
-.container img {
-    width: 80%;  /* Зображення займає 80% ширини контейнера */
-    max-width: 1100px; /* Максимальна ширина для великих екранів */
-    height: auto; /* Автоматична висота для збереження пропорцій */
-    display: block;
-    object-fit: contain; /* Вписує зображення в область */
+.description {
+    font-size: clamp(16px, 2vw, 18px);
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ddd;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+}
+
+.imageCard {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    animation: fadeIn 0.8s ease;
+}
+
+.imageCard img {
+    width: 80%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+    animation: zoomIn 0.3s ease;
+}
+
+.caption {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #ccc;
+    left: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+
+.BackButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 /* 📌 АДАПТАЦІЯ ДЛЯ ПЛАНШЕТІВ (до 1024px) */
 @media (max-width: 1024px) {

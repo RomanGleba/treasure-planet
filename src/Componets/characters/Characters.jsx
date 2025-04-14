@@ -4,20 +4,20 @@ import styles from './Characters.module.scss';
 const characters = [
     {
         id: 1,
-        image: "/images/bruno_full.png",
-        avatar: "/images/bruno.png",
+        image: "/images/characters/bruno_full.png",
+        avatar: "/images/characters/bruno.png",
 
     },
     {
         id: 2,
-        image: "/images/kserfia_full.png",
-        avatar: "/images/kserfia.png",
+        image: "/images/characters/kserfia_full.png",
+        avatar: "/images/characters/kserfia.png",
 
     },
     {
         id: 3,
-        image: "/images/lumus_full.png",
-        avatar: "/images/lumus.png",
+        image: "/images/characters/lumus_full.png",
+        avatar: "/images/characters/lumus.png",
 
     }
 ];
