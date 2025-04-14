@@ -10,6 +10,7 @@ const images = [
     { src: "/images/sketch/sketch_level.png", caption: "Ескіз рівня" },
     { src: "/images/sketch/treasure.png", caption: "Ескіз скарби" },
     { src: "/images/sketch/gamesketch.png", caption: "Ескіз скарби" },
+    { src: "/images/sketch/iconfriends.png", caption: "Іконка друзі" },
 ];
 
 const Gallery = () => {

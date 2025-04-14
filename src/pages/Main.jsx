@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../navbar/Navbar";
 import styles from './Main.module.scss';
-import About from "../componets/about/About";
-import Gallery from "../componets/gallery/Gallery";
-import Avtors from "../componets/avtors/Avtors";
-import Home from "../componets/home/Home";
-import Characters from "../componets/characters/Characters";
-import Merch from "../componets/merch/Merch";
-import Terms from "../componets/policies/terms/Terms";
-import Footer from "../componets/footer/Footer";
-import Privacy from "../componets/policies/privacypolicy/Privacy";
+import About from "../components/about/About";
+import Gallery from "../components/gallery/Gallery";
+import Avtors from "../components/avtors/Avtors";
+import Home from "../components/home/Home";
+import Characters from "../components/characters/Characters";
+import Merch from "../components/merch/Merch";
+import Terms from "../components/policies/terms/Terms";
+import Footer from "../components/footer/Footer";
+import Privacy from "../components/policies/privacypolicy/Privacy";
 
 
 const Main = () => {
