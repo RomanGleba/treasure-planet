@@ -66,6 +66,10 @@
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
+.navControls {
+    height: 100px;
+}
+
 .fullscreen {
     position: fixed;
     inset: 0;
@@ -110,10 +114,10 @@
     }
 }
 
-.backButton {
+.BackButton {
     position: fixed;
     top: 20px;
-    left: 20px;
+    left: 200px; // або left: 0 якщо прям у кут
     font-size: 48px;
     color: white;
     background: none;
@@ -128,6 +132,10 @@
     }
 }
 
+
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -138,3 +146,22 @@
         transform: scale(1);
     }
 }
+
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+    .BackButton {
+        top: 12px;
+        left: 12px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .BackButton {
+        top: 10px;
+        left: 10px;
+        font-size: 28px;
+    }
+}
+

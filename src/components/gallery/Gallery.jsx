@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Gallery.module.scss";
 
 const images = [
@@ -9,36 +9,60 @@ const images = [
     { src: "/images/sketch/wheel-of-for-tune.png", caption: "Інтерфейс колеса фортуни" },
     { src: "/images/sketch/sketch_level.png", caption: "Ескіз рівня" },
     { src: "/images/sketch/treasure.png", caption: "Ескіз скарби" },
-    { src: "/images/sketch/gamesketch.png", caption: "Ескіз сцени гри" },
+    { src: "/images/sketch/gamesketch.png", caption: "Ескіз скарби" },
     { src: "/images/sketch/iconfriends.png", caption: "Іконка друзі" },
 ];
 
 const Gallery = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const [zoom, setZoom] = useState(1);
+    const touchStartX = useRef(null);
 
-    const handleZoomIn = () => setZoom((z) => Math.min(z + 0.2, 3));
-    const handleZoomOut = () => setZoom((z) => Math.max(z - 0.2, 0.5));
+    const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 3));
+    const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
     const handleClose = () => {
         setSelectedIndex(null);
         setZoom(1);
     };
 
-    const showNext = () => setSelectedIndex((i) => (i + 1) % images.length);
-    const showPrev = () => setSelectedIndex((i) => (i - 1 + images.length) % images.length);
+    const handleNext = () => {
+        setSelectedIndex((prev) => (prev + 1) % images.length);
+        setZoom(1);
+    };
+
+    const handlePrev = () => {
+        setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+        setZoom(1);
+    };
+
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaX = touchStartX.current - touchEndX;
+
+        if (deltaX > 50) handleNext();
+        if (deltaX < -50) handlePrev();
+    };
 
     return (
         <div className={styles.container}>
             {selectedIndex !== null ? (
-                <div className={styles.fullscreen}>
-                    <button className={styles.backButton} onClick={handleClose}>←</button>
-                    <div className={styles.navButtons}>
-                        <button onClick={showPrev}>⟨</button>
-                        <button onClick={showNext}>⟩</button>
-                    </div>
+                <div
+                    className={styles.fullscreen}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    <button className={styles.BackButton} onClick={handleClose}>←</button>
                     <div className={styles.zoomControls}>
                         <button onClick={handleZoomOut}>➖</button>
                         <button onClick={handleZoomIn}>➕</button>
+                    </div>
+                    <div className={styles.navControls}>
+                        <button onClick={handlePrev}>←</button>
+                        <button onClick={handleNext}>→</button>
                     </div>
                     <img
                         src={images[selectedIndex].src}
@@ -46,6 +70,7 @@ const Gallery = () => {
                         className={styles.fullImage}
                         style={{ transform: `scale(${zoom})` }}
                     />
+                    {images[selectedIndex].caption && <p className={styles.caption}>{images[selectedIndex].caption}</p>}
                 </div>
             ) : (
                 <>
@@ -73,3 +98,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
