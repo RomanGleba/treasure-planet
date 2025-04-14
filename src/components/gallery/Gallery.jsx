@@ -9,32 +9,39 @@ const images = [
     { src: "/images/sketch/wheel-of-for-tune.png", caption: "Інтерфейс колеса фортуни" },
     { src: "/images/sketch/sketch_level.png", caption: "Ескіз рівня" },
     { src: "/images/sketch/treasure.png", caption: "Ескіз скарби" },
-    { src: "/images/sketch/gamesketch.png", caption: "Ескіз скарби" },
+    { src: "/images/sketch/gamesketch.png", caption: "Ескіз сцени гри" },
     { src: "/images/sketch/iconfriends.png", caption: "Іконка друзі" },
 ];
 
 const Gallery = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
     const [zoom, setZoom] = useState(1);
 
-    const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 3));
-    const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
+    const handleZoomIn = () => setZoom((z) => Math.min(z + 0.2, 3));
+    const handleZoomOut = () => setZoom((z) => Math.max(z - 0.2, 0.5));
     const handleClose = () => {
-        setSelectedImage(null);
+        setSelectedIndex(null);
         setZoom(1);
     };
 
+    const showNext = () => setSelectedIndex((i) => (i + 1) % images.length);
+    const showPrev = () => setSelectedIndex((i) => (i - 1 + images.length) % images.length);
+
     return (
         <div className={styles.container}>
-            {selectedImage ? (
+            {selectedIndex !== null ? (
                 <div className={styles.fullscreen}>
-                    <button className={styles.BackButton} onClick={handleClose}>←</button>
+                    <button className={styles.backButton} onClick={handleClose}>←</button>
+                    <div className={styles.navButtons}>
+                        <button onClick={showPrev}>⟨</button>
+                        <button onClick={showNext}>⟩</button>
+                    </div>
                     <div className={styles.zoomControls}>
                         <button onClick={handleZoomOut}>➖</button>
                         <button onClick={handleZoomIn}>➕</button>
                     </div>
                     <img
-                        src={selectedImage}
+                        src={images[selectedIndex].src}
                         alt="full"
                         className={styles.fullImage}
                         style={{ transform: `scale(${zoom})` }}
@@ -53,7 +60,7 @@ const Gallery = () => {
                                 <img
                                     src={item.src}
                                     alt={`concept-${index}`}
-                                    onClick={() => setSelectedImage(item.src)}
+                                    onClick={() => setSelectedIndex(index)}
                                 />
                                 {item.caption && <p className={styles.caption}>{item.caption}</p>}
                             </div>
