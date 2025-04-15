@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Gallery.module.scss";
 
 const images = [
@@ -16,7 +16,15 @@ const images = [
 const Gallery = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
     const [zoom, setZoom] = useState(1);
+    const [isMobile, setIsMobile] = useState(false);
     const touchStartX = useRef(null);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 3));
     const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
@@ -26,12 +34,12 @@ const Gallery = () => {
     };
 
     const handleNext = () => {
-        setSelectedIndex((prev) => (prev + 1) % images.length);
+        setSelectedIndex(prev => (prev + 1) % images.length);
         setZoom(1);
     };
 
     const handlePrev = () => {
-        setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+        setSelectedIndex(prev => (prev - 1 + images.length) % images.length);
         setZoom(1);
     };
 
@@ -60,17 +68,38 @@ const Gallery = () => {
                         <button onClick={handleZoomOut}>➖</button>
                         <button onClick={handleZoomIn}>➕</button>
                     </div>
-                    <div className={styles.navControls}>
-                        <button onClick={handlePrev}>←</button>
-                        <button onClick={handleNext}>→</button>
-                    </div>
-                    <img
-                        src={images[selectedIndex].src}
-                        alt="full"
-                        className={styles.fullImage}
-                        style={{ transform: `scale(${zoom})` }}
-                    />
-                    {images[selectedIndex].caption && <p className={styles.caption}>{images[selectedIndex].caption}</p>}
+
+                    {isMobile ? (
+                        <>
+                            <div className={styles.navMobileContainer}>
+                                <button onClick={handlePrev}>←</button>
+                                <button onClick={handleNext}>→</button>
+                            </div>
+                            <div className={styles.imageWrapper}>
+                                <img
+                                    src={images[selectedIndex].src}
+                                    alt="full"
+                                    className={styles.fullImage}
+                                    style={{ transform: `scale(${zoom})` }}
+                                />
+                            </div>
+                        </>
+                    ) : (
+                        <div className={styles.imageWrapper}>
+                            <button className={styles.navLeft} onClick={handlePrev}>←</button>
+                            <img
+                                src={images[selectedIndex].src}
+                                alt="full"
+                                className={styles.fullImage}
+                                style={{ transform: `scale(${zoom})` }}
+                            />
+                            <button className={styles.navRight} onClick={handleNext}>→</button>
+                        </div>
+                    )}
+
+                    {images[selectedIndex].caption && (
+                        <p className={styles.caption}>{images[selectedIndex].caption}</p>
+                    )}
                 </div>
             ) : (
                 <>
@@ -87,7 +116,9 @@ const Gallery = () => {
                                     alt={`concept-${index}`}
                                     onClick={() => setSelectedIndex(index)}
                                 />
-                                {item.caption && <p className={styles.caption}>{item.caption}</p>}
+                                {item.caption && (
+                                    <p className={styles.caption}>{item.caption}</p>
+                                )}
                             </div>
                         ))}
                     </div>
