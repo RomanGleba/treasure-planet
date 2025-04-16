@@ -91,9 +91,14 @@
         color: white;
         border: none;
         font-size: 28px;
-        padding: 6px 12px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: background-color 0.2s ease;
 
         &:hover {
@@ -106,17 +111,23 @@
     position: fixed;
     top: 20px;
     left: 20px;
-    font-size: 48px;
+    font-size: 28px;
     color: white;
-    background: none;
+    background-color: rgba(255, 255, 255, 0.15);
     border: none;
     cursor: pointer;
     z-index: 9999;
-    padding: 4px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.2s ease;
 
     &:hover {
         transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.3);
     }
 }
 
@@ -137,8 +148,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     font-size: 28px;
     background-color: rgba(255, 255, 255, 0.15);
     color: #fff;
@@ -158,11 +169,11 @@
 }
 
 .navLeft {
-    left: -60px;
+    left: 20px;
 }
 
 .navRight {
-    right: -60px;
+    right: 20px;
 }
 
 .fullImage {
@@ -192,7 +203,7 @@
     .BackButton {
         top: 12px;
         left: 12px;
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .navLeft,
@@ -201,8 +212,8 @@
     }
 
     .navMobileContainer {
-        position: fixed; // 👈 це головне
-        bottom: 715px;     // відступ від низу
+        position: fixed;
+        bottom: 715px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10000;
@@ -228,11 +239,24 @@
     }
 }
 
-
 @media (max-width: 480px) {
     .BackButton {
         top: 10px;
         left: 10px;
         font-size: 28px;
     }
+
+    .navMobileContainer{
+        display: flex;
+        bottom: 200px;
+
+        button {
+
+        }
+
+    }
+
+
+
+
 }

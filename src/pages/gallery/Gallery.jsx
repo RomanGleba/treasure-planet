@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Gallery.module.scss";
 
 const images = [
-    { src: "/images/sketch/sketch_bruno.png", caption: "Ескіз персонажа" },
+    { src: "/images/sketch/sketch_bruno.png", caption: "Ескіз героя" },
     { src: "/images/sketch/sketch_bruno2.png", caption: "Фінальний вигляд героя" },
     { src: "/images/sketch/hammer.png", caption: "Інструмент гравця — молот" },
     { src: "/images/sketch/map.png", caption: "Карта рівнів гри" },
