@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# 🔧 Встановлення залежностей
+yarn install
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🚀 Запуск локального сервера для розробки
+yarn dev
 
-## Available Scripts
+# 🏗️ Збірка проєкту для продакшену
+yarn build
 
-In the project directory, you can run:
+# 🔍 Перевірка типів або лінтинг (якщо налаштовано)
+yarn lint
 
-### `npm start`
+# 🧪 Запуск тестів (якщо є)
+yarn test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# ⚙️ Попередній перегляд продакшен-версії
+yarn preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 🌌 Treasure Planet – Інформаційний сайт гри
 
-### `npm run build`
+Це статичний промо-сайт, створений для мобільної гри **Treasure Planet**. Його основна мета — занурити гравця у космічний всесвіт гри ще до початку геймплею.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧭 Що містить сайт
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 📘 Опис сюжету гри
+- 🧑‍🚀 Інформація про головних персонажів
+- 🖼️ Галерея скетчів та ілюстрацій
+- 👕 Рекламний блок з мерчем
+- 🛠️ Представлення команди розробників
+- 🔒 Сторінки політики конфіденційності та умов використання
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Технології
 
-### `npm run eject`
+- **React** – компонентна побудова, рендеринг через Virtual DOM
+- **SCSS (Sass)** – модульні стилі з міксинами та змінними
+- **Hooks**:
+    - `useState` — керування станом компонента
+    - `useEffect` — взаємодія з `localStorage`
+    - `useRef` — реалізація свайпів у галереї
+- **localStorage** — збереження останньої відкритої сторінки користувача
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧩 Основні компоненти
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `Navbar` — меню з адаптивним бургер-режимом
+- `Gallery` — повноекранний перегляд із масштабуванням та навігацією
+- `Characters` — вибір персонажів
+- `Footer` — нижній колонтитул із навігацією
+- `Merch`, `Avtors`, `About`, `Terms`, `Privacy` — окремі сторінки з відповідним вмістом
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📱 Адаптивність
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Сайт повністю оптимізований під:
+- 📱 Мобільні пристрої (свайпи, бургер-меню)
+- 💻 Планшети (адаптивне меню)
+- 🖥️ Десктопи (мультиколоночний інтерфейс)
 
-## Learn More
+## 📦 Структура проєкту
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📦 treasure-planet/
+├── public/
+│   ├── images/
+│   │   ├── avtors/
+│   │   ├── characters/
+│   │   ├── sketch/
+│   │   └── [інші зображення]
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── robots.txt
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+├── src/
+│   ├── components/
+│   │   ├── footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Footer.module.scss
+│   │   └── navbar/
+│   │       ├── Navbar.jsx
+│   │       └── Navbar.module.scss
+│   ├── content/
+│   │   ├── AboutText.json
+│   │   ├── LicenseuseText.json
+│   │   ├── MerchText.json
+│   │   └── PrivacyText.json
+│   ├── layout/
+│   │   ├── Main.jsx
+│   │   └── Main.module.scss
+│   ├── pages/
+│   │   ├── about/
+│   │   │   ├── About.jsx
+│   │   │   └── About.module.scss
+│   │   ├── avtors/
+│   │   │   ├── Avtors.jsx
+│   │   │   └── Avtors.module.scss
+│   │   ├── characters/
+│   │   │   ├── Characters.jsx
+│   │   │   └── Characters.module.scss
+│   │   ├── gallery/
+│   │   │   ├── Gallery.jsx
+│   │   │   └── Gallery.module.scss
+│   │   ├── home/
+│   │   │   ├── Home.jsx
+│   │   │   └── Home.module.scss
+│   │   ├── merch/
+│   │   │   ├── Merch.jsx
+│   │   │   └── Merch.module.scss
+│   │   └── policies/
+│   │       ├── PrivacyPolicy/
+│   │       │   ├── Privacy.jsx
+│   │       │   └── Privacy.module.scss
+│   │       ├── Terms/
+│   │       │   ├── Terms.jsx
+│   │       │   └── Terms.module.scss
+│   ├── App.jsx
+│   ├── App.module.css
+│   ├── index.css
+│   └── index.js
 
-### Code Splitting
+├── .gitignore
+├── README.md
+├── package.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
